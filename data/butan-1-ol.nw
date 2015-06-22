@@ -1,0 +1,20 @@
+start  butan-1-ol
+title butan-1-ol 
+scratch_dir ./scratch
+geometry
+  load butan-1-ol.xyz
+end
+basis
+  * library cc-pvdz
+end
+dft
+  grid xcoarse
+  #convergence energy 1e-04
+  #xc b3lyp # B3LYP
+  #mult 1
+end
+task dft optimize
+freq
+  temp 1 296.0
+end
+task dft frequencies
